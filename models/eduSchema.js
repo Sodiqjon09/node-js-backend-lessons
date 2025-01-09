@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 
 const eduSchema = new Schema({
-  city: { type: "string", required: true },
-  street: { type: "string", required: true },
-  center_name: { type: "string", required: true },
-  branch: { type: "string" },
-  rating: { type: "string" },
+  city: { type: String, requider: true },
+  street: { type: String, requider: true },
+  center_name: { type: String, requider: true },
+  branch: { type: String },
+  rating: { type: String },
 });
 
 const Edu = model("edu", eduSchema);
