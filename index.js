@@ -11,6 +11,9 @@ app.use(cors());
 const { userRoute } = require("./routes/userRoute");
 app.use("/user", userRoute);
 
+const { carRoute } = require("./routes/carRoute");
+app.use("/car", carRoute);
+
 async function connectToDb() {
   try {
     await connect(process.env.MONGO_URL);
@@ -21,9 +24,6 @@ async function connectToDb() {
 }
 connectToDb();
 
-app.get("/", function (req, res) {
-  res.status(200).send("Hello World");
-});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
